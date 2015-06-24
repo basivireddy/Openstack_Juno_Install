@@ -49,33 +49,21 @@ mysql -uroot -p$adminpass <<EOF
 CREATE DATABASE nova;
 GRANT ALL PRIVILEGES ON nova.* TO 'nova'@'%' IDENTIFIED BY '$adminpass';
 GRANT ALL PRIVILEGES ON nova.* TO 'nova'@'$controller' IDENTIFIED BY '$adminpass';
-GRANT ALL PRIVILEGES ON nova.* TO 'nova'@'$hostname' IDENTIFIED BY '$adminpass';
-GRANT ALL PRIVILEGES ON nova.* TO 'nova'@'localhost' IDENTIFIED BY '$adminpass';
 CREATE DATABASE cinder;
 GRANT ALL PRIVILEGES ON cinder.* TO 'cinder'@'%' IDENTIFIED BY '$adminpass';
 GRANT ALL PRIVILEGES ON cinder.* TO 'cinder'@'$controller' IDENTIFIED BY '$adminpass';
-GRANT ALL PRIVILEGES ON cinder.* TO 'cinder'@'$hostname' IDENTIFIED BY '$adminpass';
-GRANT ALL PRIVILEGES ON cinder.* TO 'cinder'@'localhost' IDENTIFIED BY '$adminpass';
 CREATE DATABASE glance;
 GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'%' IDENTIFIED BY '$adminpass';
 GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'$controller' IDENTIFIED BY '$adminpass';
-GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'$hostname' IDENTIFIED BY '$adminpass';
-GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'localhost' IDENTIFIED BY '$adminpass';
 CREATE DATABASE keystone;
 GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'%' IDENTIFIED BY '$adminpass';
 GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'$controller' IDENTIFIED BY '$adminpass';
-GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'$hostname' IDENTIFIED BY '$adminpass';
-GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'localhost' IDENTIFIED BY '$adminpass';
 CREATE DATABASE neutron;
 GRANT ALL PRIVILEGES ON neutron.* TO 'neutron'@'%' IDENTIFIED BY '$adminpass';
 GRANT ALL PRIVILEGES ON neutron.* TO 'neutron'@'$controller' IDENTIFIED BY '$adminpass';
-GRANT ALL PRIVILEGES ON neutron.* TO 'neutron'@'$hostname' IDENTIFIED BY '$adminpass';
-GRANT ALL PRIVILEGES ON neutron.* TO 'neutron'@'localhost' IDENTIFIED BY '$adminpass';
 CREATE DATABASE heat;
 GRANT ALL PRIVILEGES ON heat.* TO 'heat'@'%' IDENTIFIED BY '$adminpass';
 GRANT ALL PRIVILEGES ON heat.* TO 'heat'@'$controller' IDENTIFIED BY '$adminpass';
-GRANT ALL PRIVILEGES ON heat.* TO 'heat'@'$hostname' IDENTIFIED BY '$adminpass';
-GRANT ALL PRIVILEGES ON heat.* TO 'heat'@'localhost' IDENTIFIED BY '$adminpass';
 FLUSH PRIVILEGES;
 EOF
 
