@@ -12,12 +12,14 @@ The controller node has two Network Interfaces: eth0 (used for management networ
 
 * Change to super user mode::
 
-    ``` sudo su  ```
+    ``` sudo su  
+    ```
 
 * Set the hostname::
 
    ``` vi /etc/hostname
-    controller ````
+    controller
+    ```
 
 
 * Edit /etc/hosts::
@@ -51,11 +53,13 @@ The controller node has two Network Interfaces: eth0 (used for management networ
         netmask 255.255.255.0
         network 192.168.100.0
         gateway 192.168.100.1
-        dns-nameservers 8.8.8.8 8.8.4.4 ```
+        dns-nameservers 8.8.8.8 8.8.4.4 
+        ```
 
 * Restart network and if needed **reboot** the system to activate the changes::
 
    ``` ifdown eth0 && ifup eth0
     
-    ifdown eth1 && ifup eth1 ````
+    ifdown eth1 && ifup eth1 
+    ```
     
