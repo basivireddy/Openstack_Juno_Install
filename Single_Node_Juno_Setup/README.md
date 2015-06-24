@@ -20,7 +20,7 @@ The controller node has two Network Interfaces: eth0 (used for management networ
     
      ``` vi /etc/hostname
          controller
-      
+    ```  
     
 
 
@@ -31,7 +31,8 @@ The controller node has two Network Interfaces: eth0 (used for management networ
         
     #controller
     10.0.0.11       controller
-        
+
+  ```     
    
     
 * Note:: Remove or comment the line beginning with 127.0.1.1.
@@ -55,15 +56,19 @@ The controller node has two Network Interfaces: eth0 (used for management networ
         netmask 255.255.255.0
         network 192.168.100.0
         gateway 192.168.100.1
-        dns-nameservers 8.8.8.8 8.8.4.4 
+        dns-nameservers 8.8.8.8 
+
+  ```
      
 
 * Restart network and if needed **reboot** the system to activate the changes::
 
    ```
-    ifdown eth0 && ifup eth0
+
+     ifdown eth0 && ifup eth0
     
-    ifdown eth1 && ifup eth1 
+     ifdown eth1 && ifup eth1 
+  ```
     
 
     
