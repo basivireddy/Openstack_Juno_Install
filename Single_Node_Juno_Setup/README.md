@@ -18,28 +18,31 @@ The controller node has two Network Interfaces: eth0 (used for management networ
 * Set the hostname::
 
     
-     ``` vi /etc/hostname
-         controller
-    ```  
+``` 
+        vi /etc/hostname 
+        controller
+        
+```
+      
     
 
 
 * Edit /etc/hosts::
 
-  ``` 
-    vi /etc/hosts
-        
-    #controller
-    10.0.0.11       controller
-
-  ```     
+   
+```  
+       vi /etc/hosts
+       #controller
+       10.0.0.11       controller   
+       
+```
    
     
 * Note:: Remove or comment the line beginning with 127.0.1.1.
 
 * Edit network settings to configure the interfaces eth0 and eth1::
 
-   ``` 
+``` 
     vi /etc/network/interfaces
       
     # The management network interface
@@ -58,17 +61,16 @@ The controller node has two Network Interfaces: eth0 (used for management networ
         gateway 192.168.100.1
         dns-nameservers 8.8.8.8 
 
-  ```
+```
      
 
 * Restart network and if needed **reboot** the system to activate the changes::
 
-   ```
-
-     ifdown eth0 && ifup eth0
+```   
+    ifdown eth0 && ifup eth0
+    ifdown eth1 && ifup eth1
     
-     ifdown eth1 && ifup eth1 
-  ```
+```
     
 
     
