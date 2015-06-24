@@ -18,8 +18,8 @@ The controller node has two Network Interfaces: eth0 (used for management networ
 * Set the hostname::
 
     
-     ``` vi /etc/hostname
-         controller
+     ` vi /etc/hostname `
+      `controller `
       
     
 
