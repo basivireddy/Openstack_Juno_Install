@@ -20,19 +20,16 @@ The controller node has two Network Interfaces: eth0 (used for management networ
     
      ``` vi /etc/hostname
          controller
-    ```  
+      
     
 
 
 * Edit /etc/hosts::
 
-  ``` 
-    vi /etc/hosts
-        
-    #controller
-    10.0.0.11       controller
-
-  ```     
+   
+  ```  vi /etc/hosts
+       #controller
+       10.0.0.11       controller   
    
     
 * Note:: Remove or comment the line beginning with 127.0.1.1.
