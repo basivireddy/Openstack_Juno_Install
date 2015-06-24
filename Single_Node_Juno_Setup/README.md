@@ -73,4 +73,18 @@ The controller node has two Network Interfaces: eth0 (used for management networ
 ```
     
 
-    
+Install Controller node
+-------------------------  
+* Change to super user mode::
+
+    ` sudo su `
+*  Assign permission to exicute script
+
+```
+    cd openstack_juno_install/Single_Node_Juno_Setup/
+    chmod 777 *
+```
+
+* start script
+
+   ` ./Juno_install.sh `
