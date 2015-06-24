@@ -78,6 +78,7 @@ Install Controller node
 * Change to super user mode::
 
     ` sudo su `
+
 *  Assign permission to exicute script
 
 ```
@@ -85,6 +86,4 @@ Install Controller node
     chmod 777 *
 ```
 
-* start script
-
-   ` ./Juno_install.sh `
+* start script   ` ./Juno_install.sh `
