@@ -1,0 +1,29 @@
+1. is it pinging to google.com 
+2  vi /etc/hosts
+       #controller
+       172.21.207.134  controller  
+       172.21.207.133  public_ip
+3.vi /etc/network/interfaces
+
+    # The management network interface
+    auto eth0
+    iface eth0 inet static
+        address 172.21.207.134
+        netmask 255.255.255.0
+        network 172.21.207.0
+        broadcast 172.21.207.255
+        gateway 172.21.207.129
+        # dns-* options are implemented by the resolvconf package, if installed
+        dns-nameservers 172.21.133.71
+
+    # The public network interface
+    auto eth1
+    iface eth1 inet static
+        address 172.21.207.133
+        netmask 255.255.255.0
+        network 172.21.207.0
+        broadcast 172.21.207.255
+        gateway 172.21.207.129
+        # dns-* options are implemented by the resolvconf package, if installed
+        dns-nameservers 172.21.133.71
+4. 

@@ -7,7 +7,7 @@ then
 else
 echo "you are root user, Script will continue"
 fi
-read -p  "Enter the compute_node_name:" compute_node_name
+read -p  "Enter the compute_node_ip:" compute_node_ip
 read -p  "Enter the password to set for admin and for all services:" adminpass
 
 sleep 5
@@ -30,7 +30,7 @@ rabbitmqctl change_password guest ubuntu
 service rabbitmq-server restart
 
 cd config
-find . -type f | xargs perl -p -i -e "s/compute_node_name/$compute_node_name"
+find . -type f | xargs perl -p -i -e "s/compute_node_ip/$compute_node_ip"
 find . -type f | xargs perl -p -i -e "s/adminpass/$adminpass/g"
 cd ..
 
