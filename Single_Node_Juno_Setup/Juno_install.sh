@@ -12,6 +12,7 @@ OpenStack Juno  installation:
 #################################"
 leep 5
 read -p  "Enter the password to set for admin and for all services:" adminpass
+read -p  "Enter the RABBITMQ-SERVER password :" RABBITMQ_PASS
 
 apt-get install -y  ubuntu-cloud-keyring
 echo "deb http://ubuntu-cloud.archive.canonical.com/ubuntu" "trusty-updates/juno main" > /etc/apt/sources.list.d/cloudarchive-juno.list
@@ -30,6 +31,7 @@ service ntp restart
 
 cd config
 find . -type f | xargs perl -p -i -e "s/adminpass/$adminpass/g"
+find . -type f | xargs perl -p -i -e "s/RABBITMQ_PASS/$RABBITMQ_PASS/g"
 cd ..
 
 chmod 777 *
@@ -68,7 +70,7 @@ FLUSH PRIVILEGES;
 EOF
 
 apt-get install -y  rabbitmq-server 
-rabbitmqctl change_password guest ubuntu
+rabbitmqctl change_password guest $RABBITMQ_PASS
 service rabbitmq-server restart
 
 

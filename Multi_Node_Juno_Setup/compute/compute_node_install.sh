@@ -9,6 +9,7 @@ echo "you are root user, Script will continue"
 fi
 read -p  "Enter the compute_node_ip:" compute_node_ip
 read -p  "Enter the password to set for admin and for all services:" adminpass
+read -p  "Enter the rabbitmq server password :" RABBITMQ_PASS
 
 sleep 5
 
@@ -26,12 +27,13 @@ apt-get install -y ntp
 service ntp restart
 
 apt-get install -y  rabbitmq-server 
-rabbitmqctl change_password guest ubuntu
+rabbitmqctl change_password guest $RABBITMQ_PASS
 service rabbitmq-server restart
 
 cd config
-find . -type f | xargs perl -p -i -e "s/compute_node_ip/$compute_node_ip"
+find . -type f | xargs perl -p -i -e "s/compute_node_ip/$compute_node_ip/g"
 find . -type f | xargs perl -p -i -e "s/adminpass/$adminpass/g"
+find . -type f | xargs perl -p -i -e "s/RABBITMQ_PASS/$RABBITMQ_PASS/g"
 cd ..
 
 
